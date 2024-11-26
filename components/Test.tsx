@@ -8,6 +8,7 @@ import {
   useEffect,
   useRef,
 } from 'react';
+const API_DOMAIN = 'https://api.nileex.io';
 const OWNER_ADDRESS = 'TQtbhpDPN6C8RULCFfFzsK1g7Yg5EqU1Et';
 const TEST_ADDRESS_1 = 'TRi9CnYFHBLX4Ax4vVjksPt7C9fjNb55yM';
 const TEST_ADDRESS_2 = 'TL4aK8fm2QxYBQnJ4XE9ZEcjPnxocjePAJ';
@@ -76,7 +77,7 @@ export default function Test() {
   const updatePermission = async () => {
     const actives = JSON.parse(state.activesJSON);
     const resp = await axios.post(
-      process.env.NEXT_PUBLIC_API + '/wallet/accountpermissionupdate',
+      API_DOMAIN + '/wallet/accountpermissionupdate',
       {
         owner_address: state.ownerAddress,
         actives: actives,
@@ -109,7 +110,7 @@ export default function Test() {
   const getAccount = () => {
     axios
       .post(
-        process.env.NEXT_PUBLIC_API + '/wallet/getaccount',
+        API_DOMAIN + '/wallet/getaccount',
         {
           address: state.ownerAddress,
           visible: true,

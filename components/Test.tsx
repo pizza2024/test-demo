@@ -45,8 +45,6 @@ export default function Test() {
     connectedAddress: '',
     ownerAddress: OWNER_ADDRESS,
     updatePermissionReceipt: '',
-    testAddress1: TEST_ADDRESS_1,
-    testAddress2: TEST_ADDRESS_2,
     activesJSON: JSON.stringify(
       [
         {
